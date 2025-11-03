@@ -1,0 +1,20 @@
+name: "Bug"
+description: "Laporan masalah"
+labels: ["bug"]
+body:
+  - type: textarea
+    attributes:
+      label: Gejala
+  - type: textarea
+    attributes:
+      label: Cara Reproduksi
+  - type: textarea
+    attributes:
+      label: Expected vs Actual
+  - type: textarea
+    attributes:
+      label: Log/Error
+  - type: textarea
+    attributes:
+      label: Lingkungan
+      description: OS, PHP, Node, Browser

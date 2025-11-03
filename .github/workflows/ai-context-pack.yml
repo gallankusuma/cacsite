@@ -1,0 +1,44 @@
+
+---
+
+### `.github/workflows/ai-context-pack.yml`
+```yml
+name: Build AI Context Pack
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  context:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+
+      - name: Install Composer deps (no dev for speed ok)
+        run: composer install --no-interaction --no-progress --prefer-dist
+
+      - name: Ensure docs/ai directory
+        run: mkdir -p docs/ai
+
+      - name: Export routes (JSON if possible, else text)
+        run: |
+          php artisan route:list --json > docs/ai/routes.json 2>/dev/null || true
+          if [ ! -s docs/ai/routes.json ]; then
+            php artisan route:list --columns=method,uri,name,action,middleware > docs/ai/routes.txt
+          fi
+
+      - name: Auto commit context pack updates
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(ai): update routes snapshot for context pack"
+          file_pattern: docs/ai/routes.json docs/ai/routes.txt

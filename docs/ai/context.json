@@ -1,0 +1,10 @@
+{
+  "project": "CAC Site",
+  "stack": ["Laravel11","Livewire3","Tailwind3","Vite","Breeze"],
+  "layout": "resources/views/components/layouts/app.blade.php",
+  "auth": {"provider":"breeze-livewire","gate":"admin-only","roles":["admin","editor","viewer"]},
+  "admin_routes": ["/admin","/admin/pages","/admin/products","/admin/certificates"],
+  "modules": ["Pages","PageSections","Products","ProductCategories","Certificates","Branches","SiteStats","Inquiries"],
+  "rules": ["jelaskan-dulu","kode-saat-diminta"],
+  "env": {"php":"8.2+","db":"mysql","node":">=18"}
+}

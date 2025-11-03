@@ -1,0 +1,22 @@
+name: "Feature"
+description: "Fitur/modul baru"
+labels: ["feature"]
+body:
+  - type: textarea
+    attributes:
+      label: Goal
+      description: Apa yang ingin dicapai?
+  - type: textarea
+    attributes:
+      label: User Story & Acceptance Criteria
+  - type: textarea
+    attributes:
+      label: Scope Teknis
+      description: Route, Model/Migration, Policy/Gate, Livewire Component(+view)
+  - type: textarea
+    attributes:
+      label: Dampak DB
+  - type: textarea
+    attributes:
+      label: Referensi
+      description: Link file/PR/commit/permalink

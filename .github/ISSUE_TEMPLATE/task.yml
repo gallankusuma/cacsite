@@ -1,0 +1,13 @@
+name: "Task"
+description: "Tugas kecil/refactor"
+labels: ["task"]
+body:
+  - type: textarea
+    attributes:
+      label: Deskripsi singkat
+  - type: textarea
+    attributes:
+      label: Scope file
+  - type: textarea
+    attributes:
+      label: Acceptance
