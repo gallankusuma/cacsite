@@ -4,11 +4,11 @@ namespace App\Livewire\Admin;
 
 use Livewire\Component;
 
-class Dashboard extends Component
+class SettingsIndex extends Component
 {
     public function render()
     {
-        return view('admin.dashboard')
+        return view('admin.settings-index')
             ->layout('layouts.admin');
     }
 }

@@ -1,0 +1,6 @@
+@section('title', 'Users')
+
+<div class="rounded-lg bg-white border p-4">
+    <h1 class="text-lg font-semibold">Users</h1>
+    <p class="text-sm text-gray-600">This is a placeholder page under /admin/users.</p>
+</div>
