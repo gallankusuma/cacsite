@@ -9,11 +9,12 @@ use App\Livewire\Admin\SettingsIndex;
 
 Route::prefix('admin')
     ->name('admin.')
-    ->middleware(['auth']) // tambahkan 'verified' jika Anda pakai verifikasi email
+    ->middleware(['auth']) // sementara bisa kosongin [] untuk test tanpa login
     ->group(function () {
         Route::get('/', Dashboard::class)->name('dashboard');
-
-        // Contoh halaman lain (untuk demonstrasi menu aktif)
         Route::get('/users', UsersIndex::class)->name('users.index');
         Route::get('/settings', SettingsIndex::class)->name('settings.index');
+
+        // Ping test (hapus nanti)
+        Route::get('/ping', fn () => 'admin ok')->name('ping');
     });
